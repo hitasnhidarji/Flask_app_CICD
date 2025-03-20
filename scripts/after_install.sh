@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Logging in to Amazon ECR..."
-docker login --username AWS --password $(aws ecr get-login-password --region us-east-1) 724772048206.dkr.ecr.eu-north-1.amazonaws.com
+docker login --username AWS --password $(aws ecr get-login-password --region eu-north-1) 724772048206.dkr.ecr.eu-north-1.amazonaws.com
 echo "Logged in to Amazon ECR successfully."
 
 echo "Pulling image from Amazon ECR"
