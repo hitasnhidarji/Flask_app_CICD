@@ -19,3 +19,7 @@ phases:
       - docker tag flask_image:latest 724772048206.dkr.ecr.eu-north-1.amazonaws.com/flask_image:latest
       - docker push 724772048206.dkr.ecr.eu-north-1.amazonaws.com/flask_image:latest
       - echo Flask image pushed to ECR
+artifacts:
+ files:
+  - 'scripts/**/*'
+  - 'appspec.yml'
