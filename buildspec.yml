@@ -4,20 +4,20 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 724772048206.dkr.ecr.eu-north-1.amazonaws.com
+      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 273354645863.dkr.ecr.eu-north-1.amazonaws.com
       - echo Logged in to Amazon ECR successfully
 
   build:
     commands:
       - echo Building Docker Image for Flask Application
-      - docker build -t flask_image .
+      - docker build -t flask_cicd .
       - echo Image built successfully
 
   post_build:
     commands:
       - echo Tagging Flask Docker image
-      - docker tag flask_image:latest 724772048206.dkr.ecr.eu-north-1.amazonaws.com/flask_image:latest
-      - docker push 724772048206.dkr.ecr.eu-north-1.amazonaws.com/flask_image:latest
+      - docker tag flask_cicd:latest 273354645863.dkr.ecr.eu-north-1.amazonaws.com/flask_cicd:latest
+      - docker push 273354645863.dkr.ecr.eu-north-1.amazonaws.com/flask_cicd:latest
       - echo Flask image pushed to ECR
 artifacts:
  files:
